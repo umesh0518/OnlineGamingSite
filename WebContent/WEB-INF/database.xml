@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Querys>
+
+	<!-- DROP TABLES Query -->
+	<query id="drop_table">
+         <![CDATA[        
+          	DROP TABLE IF EXISTS leaderboard;
+			DROP TABLE IF EXISTS game;
+			DROP TABLE IF EXISTS forum;
+			DROP TABLE IF EXISTS product;
+			DROP TABLE IF EXISTS forum_admin;
+			DROP TABLE IF EXISTS product_admin;
+			DROP TABLE IF EXISTS player;
+			DROP TABLE IF EXISTS gameseller;
+			DROP TABLE IF EXISTS user_;
+        ]]>
+	</query>
+
+	<!-- Create table user_ Query -->
+	<query id="create_user_table">
+        <![CDATA[
+            CREATE TABLE user_(
+				userId  int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			    firstName varchar(50),
+			    lastName varchar(50),
+			    email varchar(50),
+			    dob date
+				)
+						
+        ]]>
+	</query>
+	
+	<!-- Create table Player Query -->
+	<query id="create_player_table">
+        <![CDATA[
+            CREATE TABLE player(
+				playerId int(10) PRIMARY KEY,
+				
+				CONSTRAINT playerf1 FOREIGN KEY(playerId) REFERENCES user_(userId) 
+				)
+						
+        ]]>
+	</query>
+	
+		<!-- Create table  Query -->
+	<query id="create_gameseller_table">
+        <![CDATA[
+        	CREATE TABLE gameseller( 
+        		gsId int(10) PRIMARY KEY, companyName varchar(50),
+       		
+        		CONSTRAINT gamesellerf1 FOREIGN KEY(gsId) REFERENCES user_(userId) 
+        		)
+          
+						
+        ]]>
+	</query>
+	
+			<!-- Create table  Query -->
+	<query id="create_game_table">
+        <![CDATA[
+        	CREATE TABLE game( 
+			    gameId int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+			    gamesellerID int(10), 
+			    gameName varchar(50), 
+			    category varchar(50), 
+			    gamePoster varchar(100), 
+			
+			    CONSTRAINT gamefk1 FOREIGN KEY(gamesellerID) REFERENCES gameseller(gsId) 
+				)
+          	
+						
+        ]]>
+	</query>
+	
+			<!-- Create table  Query -->
+	<query id="create_forum_admin_table">
+        <![CDATA[
+          
+          	CREATE TABLE forum_admin(
+				forumAID int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+			    firstName varchar(50),
+			    lastName varchar(50),
+			    email varchar(100)
+			    
+			)
+						
+        ]]>
+	</query>
+	
+			<!-- Create table  Query -->
+	<query id="create_product_admin_table">
+        <![CDATA[
+          	CREATE TABLE product_admin(
+			    productAID int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+			    firstName varchar(50),
+			    lastName varchar(50),
+			    email varchar(100)
+			    
+			)
+          	
+						
+        ]]>
+	</query>
+	
+			<!-- Create table  Query -->
+	<query id="create_forum_table">
+        <![CDATA[
+          	CREATE TABLE forum( 
+			    forumId int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+			    posterID int(10), 
+			    forumAdminId int(10), 
+			    discussionTitle varchar(100), 
+			    discussionContent varchar(500), 
+			
+			    CONSTRAINT forumfk1 FOREIGN KEY(posterID) REFERENCES user_(userId),
+			    CONSTRAINT forumfk2 FOREIGN KEY(forumAdminId) REFERENCES forum_admin(forumAID)
+			)
+						
+        ]]>
+	</query>
+	
+			<!-- Create table  Query -->
+	<query id="create_product_table">
+        <![CDATA[
+          	CREATE TABLE product( 
+			    productId int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+			    product_adminID int(10), 
+			    product_price float,
+			    productTitle varchar(100), 
+			    productImage varchar(500), 
+			
+			    CONSTRAINT productfk1 FOREIGN KEY(product_adminID) REFERENCES forum_admin(forumAID)
+			    
+			)
+						
+        ]]>
+	</query>
+	
+			<!-- Create table  Query -->
+	<query id="create_leaderboad_table">
+        <![CDATA[
+          	CREATE TABLE leaderboard( 
+			    leaderboardId int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+			    gameID int(10), 
+			    playerID int(10), 
+			    topscore float,
+			    
+				CONSTRAINT leaderboardfk1 FOREIGN KEY(gameID) REFERENCES game(gameID),
+			    CONSTRAINT leaderboardfk2 FOREIGN KEY(playerID) REFERENCES player(playerID)
+			    
+			)
+						
+        ]]>
+	</query>
+	
+
+	
+	
+
+
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_employee">
+        <![CDATA[
+          	insert into employee (employeeID, employeeName, designation, faculty, department, address, qualifications, gender) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular employee by id Query -->
+	<query id="employee_by_id">
+         <![CDATA[        
+            select * from employee where employee.employeeID = ?
+        ]]>
+	</query>
+
+	<!-- Select all employees -->
+	<query id="all_employees">
+         <![CDATA[        
+            select * from employee
+        ]]>
+	</query>
+
+	<!-- Delete a particular employee by id Query -->
+	<query id="remove_employee">
+         <![CDATA[        
+            delete from employee where employee.employeeID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular employee by id Query -->
+	<query id="update_employee">
+         <![CDATA[        
+            update employee as e 
+            set e.employeeName = ?, e.designation = ?, e.faculty = ?, e.department = ?, e.address = ?, e.qualifications = ?, e.gender = ? 
+            where e.employeeID = ?
+        ]]>
+	</query>
+	
+		<!-- Get employee IDs Query -->
+	<query id="employee_ids">
+         <![CDATA[        
+            select e.employeeID from employee as e
+        ]]>
+	</query>
+
+</Querys>
