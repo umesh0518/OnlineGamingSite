@@ -9,4 +9,18 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  
+  <servlet>
+  	<servlet-name>AddPlayerServlet</servlet-name>
+  	<servlet-class>com.onlinegame.servlet.AddPlayerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddPlayerServlet</servlet-name>
+  	<url-pattern>/html/addplayer</url-pattern>
+  </servlet-mapping>
+  
+  
+  
 </web-app>

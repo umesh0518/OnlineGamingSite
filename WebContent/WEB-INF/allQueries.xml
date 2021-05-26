@@ -32,18 +32,12 @@
 	</query>
 	
 	
-	<query id="drop_table_forum_admin">
+	<query id="drop_table_admin">
          <![CDATA[ 
-			DROP TABLE IF EXISTS forum_admin;
+			DROP TABLE IF EXISTS admin;
 			]]>
 	</query>
 	
-	
-	<query id="drop_table_product_admin">
-         <![CDATA[ 
-			DROP TABLE IF EXISTS product_admin;
-			]]>
-	</query>
 	
 	
 	<query id="drop_table_player">
@@ -75,12 +69,13 @@
         <![CDATA[
             CREATE TABLE user_(
 				userId  int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-			    firstName varchar(50),
-			    lastName varchar(50),
-			    email varchar(50),
-			    gender varchar(10);
-			    dob date
-				)
+				firstName varchar(50),
+				lastName varchar(50),
+				email varchar(50),
+		        gender varchar(10),
+				dob date,
+				password varchar(50)
+			)
 						
         ]]>
 	</query>
@@ -128,34 +123,22 @@
 	</query>
 	
 			<!-- Create table  Query -->
-	<query id="create_forum_admin_table">
+	<query id="create_admin_table">
         <![CDATA[
           
-          	CREATE TABLE forum_admin(
-				forumAID int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-			    firstName varchar(50),
-			    lastName varchar(50),
-			    email varchar(100)
-			    
+          	CREATE TABLE admin(
+				adminID int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+				firstName varchar(50),
+				lastName varchar(50),
+				email varchar(100),
+				type char(1),
+				password varchar(50)
 			)
 						
         ]]>
 	</query>
 	
-			<!-- Create table  Query -->
-	<query id="create_product_admin_table">
-        <![CDATA[
-          	CREATE TABLE product_admin(
-			    productAID int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-			    firstName varchar(50),
-			    lastName varchar(50),
-			    email varchar(100)
-			    
-			)
-          	
-						
-        ]]>
-	</query>
+
 	
 			<!-- Create table  Query -->
 	<query id="create_forum_table">
@@ -168,7 +151,7 @@
 			    discussionContent varchar(500), 
 			
 			    CONSTRAINT forumfk1 FOREIGN KEY(posterID) REFERENCES user_(userId),
-			    CONSTRAINT forumfk2 FOREIGN KEY(forumAdminId) REFERENCES forum_admin(forumAID)
+			    CONSTRAINT forumfk2 FOREIGN KEY(forumAdminId) REFERENCES admin(adminID)
 			)
 						
         ]]>
@@ -184,7 +167,7 @@
 			    productTitle varchar(100), 
 			    productImage varchar(500), 
 			
-			    CONSTRAINT productfk1 FOREIGN KEY(product_adminID) REFERENCES forum_admin(forumAID)
+			    CONSTRAINT productfk1 FOREIGN KEY(product_adminID) REFERENCES admin(adminID)
 			    
 			)
 						
@@ -215,9 +198,9 @@
 
 
 	<!-- Select all customer orders Query -->
-	<query id="insert_employee">
+	<query id="register_user">
         <![CDATA[
-          	insert into employee (employeeID, employeeName, designation, faculty, department, address, qualifications, gender) 
+          	insert into player (employeeID, employeeName, designation, faculty, department, address, qualifications, gender) 
           	values (?, ?, ?, ?, ?, ?, ?, ?)
         ]]>
 	</query>

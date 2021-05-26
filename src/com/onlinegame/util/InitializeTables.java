@@ -24,8 +24,7 @@ public class InitializeTables {
 		statement.execute(QueryUtil.executeQueryById("drop_table_game"));
 		statement.execute(QueryUtil.executeQueryById("drop_table_forum"));
 		statement.execute(QueryUtil.executeQueryById("drop_table_product"));
-		statement.execute(QueryUtil.executeQueryById("drop_table_forum_admin"));
-		statement.execute(QueryUtil.executeQueryById("drop_table_product_admin"));
+		statement.execute(QueryUtil.executeQueryById("drop_table_admin"));
 		statement.execute(QueryUtil.executeQueryById("drop_table_player"));
 		statement.execute(QueryUtil.executeQueryById("drop_table_gameseller"));
 		statement.execute(QueryUtil.executeQueryById("drop_table_user_"));
@@ -35,8 +34,7 @@ public class InitializeTables {
 		statement.execute(QueryUtil.executeQueryById("create_player_table"));
 		statement.execute(QueryUtil.executeQueryById("create_gameseller_table"));
 		statement.execute(QueryUtil.executeQueryById("create_game_table"));
-		statement.execute(QueryUtil.executeQueryById("create_forum_admin_table"));
-		statement.execute(QueryUtil.executeQueryById("create_product_admin_table"));
+		statement.execute(QueryUtil.executeQueryById("create_admin_table"));
 		statement.execute(QueryUtil.executeQueryById("create_forum_table"));
 		statement.execute(QueryUtil.executeQueryById("create_product_table"));
 		statement.execute(QueryUtil.executeQueryById("create_leaderboad_table"));

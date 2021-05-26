@@ -2,90 +2,70 @@
 
 body{
 	margin:0px;
+	/*background-image:url("#")!important;
+	*/
 }
 
-.solid {
-  border-style: solid;
-  border-width: 2px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #666;
+.container {
+    
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom:20px;
+    
+        
+  }
+  
+.margin_top{
+	margin-top: 20px;
+} 
+
+margin_bottom{
+	margin-bottom:20px
 }
 
-header h1 {
-  margin: 0;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 15px;
-  word-spacing: 35px;
-  font-size:45;
-  font-family: comic sans;
-}
 @media (max-width: 520px) {
   header h1 {
     font-size: 1em;
   }
 }
-h1.welcome-notice{
-  text-align: center;
 
+.form{
+  background:  #333;
+  color: white;
+  font-size: 18px;
+  padding: 25px 15px 15px 15px;
+  border: 1px solid;
 }
-.login{
-  text-align: center;
-
+input{
+  width: 95%;
+  padding:2%;
+  margin-top:1%;
+  margin-bottom:2%;
+  
+  
+  
+}
+.submit_btn {
+  margin: 0 auto;
+  padding: 2%;
+  
+}
+.check_boxes
+{
+  width: unset;  /* check boxes and radio button width is removed */
 }
 
+.login_form{
+  margin-top: 40px;
+  width:40%;
+  margin: auto ;
+}
 h1{
 	font-size: 40px;
 	font-family: arial;
 }
 
-
-hr#test{
-	border: 1px solid black;
-	border-radius: 1px;
-}
-
-
-ul.menu{
-	list-style-type:none;
-	margin: 0;
-	padding: 0;
-	background-color:#666;
-	overflow: hidden;
-
-}
-
-li.menu{
-	float: left;
-}
-
-li a{
-	display: block;
-	color: white;
-	text-align: center;
-	padding:15px 18px;
-	text-decoration: none;
-}
-
-li a:hover{
-	background-color: #17252A;
-}
-
-.logo {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.footer {
-  padding: 10px;
-  text-align: center;
-  background: #666;
-  color: white;
-  
-}
 
 .button {
   border: none;

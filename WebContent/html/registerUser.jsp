@@ -6,15 +6,15 @@
 <meta charset="ISO-8859-1">
 <jsp:include page="../WEB-INF/views/header.jsp"></jsp:include>
 </head>
-<body>
+<body >
    
-	<div class = "container">
+	<div class = "container margin_top margin_bottom">
         <jsp:include page="../WEB-INF/views/navbar.jsp"></jsp:include>
    
 		   
 
         <div class = "login_form">
-            <form class = "form" id = "form" action = "#"  method= "POST" >
+            <form class = "form" id = "form" action = "addplayer"  method= "POST" >
                 
                 <label for="fname">First name:</label><br>
                 <input type="text" id="fname" name="fname" placeholder = "Enter your first name" required >
