@@ -3,19 +3,72 @@
 <Querys>
 
 	<!-- DROP TABLES Query -->
-	<query id="drop_table">
+	<query id="drop_table_leaderboard">
          <![CDATA[        
           	DROP TABLE IF EXISTS leaderboard;
-			DROP TABLE IF EXISTS game;
+          	]]>
+	</query>
+	
+	
+	<query id="drop_table_game">
+         <![CDATA[ 
+         	DROP TABLE IF EXISTS game;
+         	]]>
+	</query>
+	
+	
+  	<query id="drop_table_forum">
+        <![CDATA[ 
 			DROP TABLE IF EXISTS forum;
+			]]>
+	</query>
+	
+	
+	
+	<query id="drop_table_product">
+         <![CDATA[ 
 			DROP TABLE IF EXISTS product;
+			]]>
+	</query>
+	
+	
+	<query id="drop_table_forum_admin">
+         <![CDATA[ 
 			DROP TABLE IF EXISTS forum_admin;
+			]]>
+	</query>
+	
+	
+	<query id="drop_table_product_admin">
+         <![CDATA[ 
 			DROP TABLE IF EXISTS product_admin;
+			]]>
+	</query>
+	
+	
+	<query id="drop_table_player">
+         <![CDATA[ 
 			DROP TABLE IF EXISTS player;
+			]]>
+	</query>
+	
+	
+			
+	<query id="drop_table_gameseller">
+         <![CDATA[ 
 			DROP TABLE IF EXISTS gameseller;
+		]]>
+	</query>
+			
+			
+			
+	<query id="drop_table_user_">
+         <![CDATA[ 
 			DROP TABLE IF EXISTS user_;
         ]]>
 	</query>
+
+
 
 	<!-- Create table user_ Query -->
 	<query id="create_user_table">
@@ -25,6 +78,7 @@
 			    firstName varchar(50),
 			    lastName varchar(50),
 			    email varchar(50),
+			    gender varchar(10);
 			    dob date
 				)
 						

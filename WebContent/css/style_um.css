@@ -1,0 +1,124 @@
+
+
+body{
+	margin:0px;
+}
+
+.solid {
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #666;
+}
+
+header h1 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  word-spacing: 35px;
+  font-size:45;
+  font-family: comic sans;
+}
+@media (max-width: 520px) {
+  header h1 {
+    font-size: 1em;
+  }
+}
+h1.welcome-notice{
+  text-align: center;
+
+}
+.login{
+  text-align: center;
+
+}
+
+h1{
+	font-size: 40px;
+	font-family: arial;
+}
+
+
+hr#test{
+	border: 1px solid black;
+	border-radius: 1px;
+}
+
+
+ul.menu{
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+	background-color:#666;
+	overflow: hidden;
+
+}
+
+li.menu{
+	float: left;
+}
+
+li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding:15px 18px;
+	text-decoration: none;
+}
+
+li a:hover{
+	background-color: #17252A;
+}
+
+.logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #666;
+  color: white;
+  
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid purple;
+}
+
+.button1:hover {
+  background-color: purple;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
