@@ -29,14 +29,14 @@
         
                   
                 <label >Date of birth:</label><br>
-                <input type = "date" id= "date" name= "date"><br><br>
+                <input type = "date" id= "date" name= "dob"><br><br>
 
                      
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._]+@[a-z0-9.-]+\.[a-z]{2,3}" placeholder = "Enter your email address" required><br><br>
         
-                <label for="address">Address</label><br>
-                <textarea id="address_user" name="address_user" rows="4" style = "width: 98%;"></textarea><br><br>
+                <label for="password">Password</label><br>
+                <input type ="password" id="user_password" name="user_password" placeholder = "Enter password" required></input><br><br>
         
                 <input class = "check_boxes" type="checkbox" id="policy_u" onclick="enableButton1();" > Accept privacy <a href="#">policy and terms </a><br><br>
                 

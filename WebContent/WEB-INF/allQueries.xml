@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
-<Querys>
+<Queries>
 
 	<!-- DROP TABLES Query -->
 	<query id="drop_table_leaderboard">
@@ -92,7 +92,7 @@
         ]]>
 	</query>
 	
-		<!-- Create table  Query -->
+		<!-- Create table gameseller Query -->
 	<query id="create_gameseller_table">
         <![CDATA[
         	CREATE TABLE gameseller( 
@@ -105,7 +105,7 @@
         ]]>
 	</query>
 	
-			<!-- Create table  Query -->
+			<!-- Create table game Query -->
 	<query id="create_game_table">
         <![CDATA[
         	CREATE TABLE game( 
@@ -122,7 +122,7 @@
         ]]>
 	</query>
 	
-			<!-- Create table  Query -->
+			<!-- Create table admin Query -->
 	<query id="create_admin_table">
         <![CDATA[
           
@@ -140,7 +140,7 @@
 	
 
 	
-			<!-- Create table  Query -->
+			<!-- Create table forum Query -->
 	<query id="create_forum_table">
         <![CDATA[
           	CREATE TABLE forum( 
@@ -157,7 +157,7 @@
         ]]>
 	</query>
 	
-			<!-- Create table  Query -->
+			<!-- Create table product Query -->
 	<query id="create_product_table">
         <![CDATA[
           	CREATE TABLE product( 
@@ -174,7 +174,7 @@
         ]]>
 	</query>
 	
-			<!-- Create table  Query -->
+			<!-- Create table leaderboard Query -->
 	<query id="create_leaderboad_table">
         <![CDATA[
           	CREATE TABLE leaderboard( 
@@ -197,18 +197,17 @@
 
 
 
-	<!-- Select all customer orders Query -->
-	<query id="register_user">
+	<!-- add data to user table -->
+	<query id="add_user">
         <![CDATA[
-          	insert into player (employeeID, employeeName, designation, faculty, department, address, qualifications, gender) 
-          	values (?, ?, ?, ?, ?, ?, ?, ?)
+          	insert into user_ (firstName, lastName, email, gender, dob, password) values (?, ?, ?, ?, ?, ?)
         ]]>
 	</query>
 
-	<!-- Select a particular employee by id Query -->
-	<query id="employee_by_id">
+	<!--  -->
+	<query id="select_all_user">
          <![CDATA[        
-            select * from employee where employee.employeeID = ?
+            select * from user_
         ]]>
 	</query>
 
@@ -242,4 +241,4 @@
         ]]>
 	</query>
 
-</Querys>
+</Queries>

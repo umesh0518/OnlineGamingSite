@@ -38,6 +38,9 @@ public class InitializeTables {
 		statement.execute(QueryUtil.executeQueryById("create_forum_table"));
 		statement.execute(QueryUtil.executeQueryById("create_product_table"));
 		statement.execute(QueryUtil.executeQueryById("create_leaderboad_table"));
+		
+		//close connection
+		connection.close();
 	}
 	
 	

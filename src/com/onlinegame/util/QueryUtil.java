@@ -22,7 +22,7 @@ public static String executeQueryById(String id) throws ParserConfigurationExcep
 		//File directory = new File("./");
 		//System.out.println(directory.getAbsolutePath());
 
-		File xmlfile = new File("WebContent/WEB-INF/allQueries.xml");
+		File xmlfile = new File("C:\\Users\\Umesh\\Desktop\\java_project\\OnlineGamingSite\\WebContent\\WEB-INF\\allQueries.xml");
 	    DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	    DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	    Document doc = dBuilder.parse(xmlfile);

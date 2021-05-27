@@ -28,13 +28,11 @@ public class main {
 		// TODO Auto-generated method stub
 		
 		//File directory = new File("./");
-				//System.out.println(directory.getAbsolutePath());
+		//System.out.println(directory.getAbsolutePath());
 		
 		
 		 try  {
-
-	         
-	             
+                // initializing all the tables in database
 	    		 InitializeTables.initializeTables();
 
 	        } catch (Exception ex) {
