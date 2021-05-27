@@ -40,7 +40,7 @@
         
                 <input class = "check_boxes" type="checkbox" id="policy_u" onclick="enableButton1();" > Accept privacy <a href="#">policy and terms </a><br><br>
                 
-                <button class = "submit_btn" type = "submit" id = "submit_btn_u" name ="submit_btn" disabled>Continue to Payment</button>
+                <button class = "submit_btn" type = "submit" id = "submit_btn_u" name ="submit_btn" disabled>Register</button>
             </form>
         </div>
 
